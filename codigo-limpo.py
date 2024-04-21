@@ -1,8 +1,16 @@
 import os
 
-def check_create_dir(dir_path):
-    if not os.path.exists(dir_path):
-        os.makedirs(dir_path)
-        print("Directory created:", dir_path)
+def create_directory_if_missing(directory_path):
+    """Ensure that the specified directory exists; create it if it does not.
+
+    Args:
+    directory_path (str): The file path to the directory to check and potentially create.
+
+    Returns:
+    None
+    """
+    if not os.path.exists(directory_path):
+        os.makedirs(directory_path)
+        print(f"Directory created: {directory_path}")
     else:
-        print("Directory exists.")
+        print("Directory already exists.")
